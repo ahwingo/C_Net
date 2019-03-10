@@ -13,7 +13,7 @@ The framework currently provides support for the softmax loss function and a var
 For those who have used the KERAS sequential model, building a neural network in C_Net should be a familiar task. The model allows users to stack layers of different types and specify the network's hyperparameters. The example below shows how a deep neural network can be built and trained in just __X__ lines of code, once the training and evaluation data sets are loaded.
 
 #### Build a neural network with three hidden layers:
-```c++
+```cpp
 // Initialize the network.
 sequential_network the_network = sequential_network(learning_rate, beta_one, beta_two, distribution, softmax_loss);
     
@@ -42,40 +42,48 @@ This following full code example shows a sequential model network trained on dat
 | ![Moons](moons_data.png) | ![Circles](circles_data.png)|
 
 #### Load the necessary header files.
-    #include <iostream>
-    #include <random>
-    #include "neuron.h"
-    #include "sequential.h"
-    #include "activation_functions.h"
-    #include "cost_functions.h"
-    #include "tsv_data_loader.h"
-    #include "random_indexer.h"
-    using  namespace std;
+```cpp
+#include <iostream>
+#include <random>
+#include "neuron.h"
+#include "sequential.h"
+#include "activation_functions.h"
+#include "cost_functions.h"
+#include "tsv_data_loader.h"
+#include "random_indexer.h"
+using  namespace std;
+```
 
 #### Inside the main function, load the training and evaluation data.
-    vector< vector<float> > training_inputs = load_data_from_tsv_file("circles_training_inputs.txt");
-    vector< vector<float> > training_labels = load_data_from_tsv_file("circles_training_labels.txt");
-    vector< vector<float> > evaluation_inputs = load_data_from_tsv_file("circles_evaluation_inputs.txt");
-    vector< vector<float> > evaluation_labels = load_data_from_tsv_file("circles_evaluation_labels.txt");
+```cpp
+vector< vector<float> > training_inputs = load_data_from_tsv_file("circles_training_inputs.txt");
+vector< vector<float> > training_labels = load_data_from_tsv_file("circles_training_labels.txt");
+vector< vector<float> > evaluation_inputs = load_data_from_tsv_file("circles_evaluation_inputs.txt");
+vector< vector<float> > evaluation_labels = load_data_from_tsv_file("circles_evaluation_labels.txt");
+```
 
 
 #### Then, set the hyperparameters.
-    int num_epochs = 1000;
-    float learning_rate = 0.001;
-    float beta_one = 0.9;
-    float beta_two = 0.999;
-    normal_distribution<float> distribution(0.0, 1.0);
-    int input_layer_size = int(training_inputs[0].size());
-    int output_layer_size = int(training_labels[0].size());
+```cpp
+int num_epochs = 1000;
+float learning_rate = 0.001;
+float beta_one = 0.9;
+float beta_two = 0.999;
+normal_distribution<float> distribution(0.0, 1.0);
+int input_layer_size = int(training_inputs[0].size());
+int output_layer_size = int(training_labels[0].size());
+```
 
 #### Build and train the sequential network.
-    sequential_network the_network = sequential_network(learning_rate, beta_one, beta_two, distribution, softmax_loss);
-    the_network.add_input_layer(input_layer_size);
-    the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
-    the_network.add_fully_connected_layer(4, sigmoid, sigmoid_derivative);
-    the_network.add_fully_connected_layer(8, sigmoid, sigmoid_derivative);
-    the_network.add_fully_connected_layer(output_layer_size, sigmoid, sigmoid_derivative);
-    the_network.train_network_for_epochs_with_data(num_epochs, training_inputs, training_labels, evaluation_inputs, evaluation_labels);
+```cpp
+sequential_network the_network = sequential_network(learning_rate, beta_one, beta_two, distribution, softmax_loss);
+the_network.add_input_layer(input_layer_size);
+the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
+the_network.add_fully_connected_layer(4, sigmoid, sigmoid_derivative);
+the_network.add_fully_connected_layer(8, sigmoid, sigmoid_derivative);
+the_network.add_fully_connected_layer(output_layer_size, sigmoid, sigmoid_derivative);
+the_network.train_network_for_epochs_with_data(num_epochs, training_inputs, training_labels, evaluation_inputs, evaluation_labels);
+```
 
 #### Evaluation metrics at final three epochs:
     --------------------------------------------------------
