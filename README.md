@@ -10,7 +10,7 @@ C_Net allows users to build a neural network at two levels of abstraction: eithe
 The framework currently provides support for the softmax loss function and a variety of activation functions. The __modular design__ allows other loss and activation functions can easily be added. The framework uses stochastic gradient descent and ADAM optimization to make parameter updates. Future work will include support for other optimizers, batch training, regularization, and parallelization techniques. Other areas of interest include built in support for __neural architecture search__ and __network morphism__ algorithms, to automatically find the optimal network architecture.
 
 ## Using The Sequential Model:
-For those who have used the KERAS sequential model, building a neural network in C_Net should be a familiar task. The model allows users to stack layers of different types and specify the network's hyperparameters. The example below shows how a deep neural network can be built and trained in just __X__ lines of code, once the training and evaluation data sets are loaded.
+For those who have used the KERAS sequential model, building a neural network in C_Net should be a familiar task. The model allows users to stack layers of different types and specify the network's hyperparameters. The example below shows how a deep neural network can be built and trained in just __7 lines of code__, once the training and evaluation data sets are loaded.
 
 #### Build a neural network with three hidden layers:
 ```cpp
