@@ -13,20 +13,21 @@ The framework currently provides support for the softmax loss function and a var
 For those who have used the KERAS sequential model, building a neural network in C_Net should be a familiar task. The model allows users to stack layers of different types and specify the network's hyperparameters. The example below shows how a deep neural network can be built and trained in just __X__ lines of code, once the training and evaluation data sets are loaded.
 
 #### Build a neural network with three hidden layers:
-    // Initialize the network.
-    sequential_network the_network = sequential_network(learning_rate, beta_one, beta_two, distribution, softmax_loss);
+```c++
+// Initialize the network.
+sequential_network the_network = sequential_network(learning_rate, beta_one, beta_two, distribution, softmax_loss);
     
-    // Set up the network's input layer.
-    the_network.add_input_layer(input_layer_size);
+// Set up the network's input layer.
+the_network.add_input_layer(input_layer_size);
     
-    // Add a few fully connected layers, each containing a number of hidden neurons. Use a sigmoid activation.
-    the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
-    the_network.add_fully_connected_layer(4, sigmoid, sigmoid_derivative);
-    the_network.add_fully_connected_layer(8, sigmoid, sigmoid_derivative);
+// Add a few fully connected layers, each containing a number of hidden neurons. Use a sigmoid activation.
+the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
+the_network.add_fully_connected_layer(4, sigmoid, sigmoid_derivative);
+the_network.add_fully_connected_layer(8, sigmoid, sigmoid_derivative);
     
-    // Add the output layer. Use a sigmoid activation.
-    the_network.add_fully_connected_layer(output_layer_size, sigmoid, sigmoid_derivative);
-
+// Add the output layer. Use a sigmoid activation.
+the_network.add_fully_connected_layer(output_layer_size, sigmoid, sigmoid_derivative);
+```
 #### Train the network:
     the_network.train_network_for_epochs_with_data(num_epochs, training_inputs, training_labels, evaluation_inputs, evaluation_labels);
 
