@@ -1,4 +1,4 @@
-# C_NET
+![CNet](cnet_logo.png)
 # An independently developed, object oriented neural network framework. Implemented from scratch in C++.
 
 
@@ -35,7 +35,7 @@ the_network.add_fully_connected_layer(output_layer_size, sigmoid, sigmoid_deriva
  
 ## Sequential model example with noisy, non-linear data:
 
-This following full code example shows a sequential model network trained on datasets that are both noisy and contain non-linearities. The model built in below performs well on both the "moons" and "circles" datasets, which each contain 1000 data points (75% training, 25% testing). The evaluation metrics include the network's average loss, precision, recall, and F1 score.
+The following full code example shows a sequential model network trained on datasets that are both noisy and contain non-linearities. The model built below performs well on both the "moons" and "circles" datasets, which each contain 1000 data points (75% training, 25% testing). The evaluation metrics include the average loss and confusion matrix for the epoch, in addition to the network's precision, recall, and F1 score.
 
 | Moons |  Circles|
 |--|--|
