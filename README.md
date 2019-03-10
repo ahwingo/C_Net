@@ -5,7 +5,7 @@
 ## Framework Overview:
 __C_Net is an object oriented machine learning framework designed for programmers who want to build neural networks using C++.__ As a work in progress, C_Net currently enables users to build both simple and deep neural networks, in addition to CNNs (with 2D conv filters) and RNNs (with LSTM recurrent layers). 
 
-C_Net allows users to build a neural network at two levels of abstraction: either as a computational graph of individual neurons, or as the connection of entire layers. The sequential model, similar to the one implemented by KERAS, allows users to __build and train networks with just a few lines of code.__
+C_Net allows users to build a neural network at two levels of abstraction: either as a computational graph of individual neurons, or as a sequence of connected of layers. The sequential model, similar to the one implemented by KERAS, allows users to __build and train networks with just a few lines of code.__
 
 The framework currently provides support for the softmax loss function and a variety of activation functions. The __modular design__ allows other loss and activation functions can easily be added. The framework uses stochastic gradient descent and ADAM optimization to make parameter updates. Future work will include support for other optimizers, batch training, regularization, and parallelization techniques. Other areas of interest include built in support for __neural architecture search__ and __network morphism__ algorithms, to automatically find the optimal network architecture.
 
