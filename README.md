@@ -1,4 +1,4 @@
-![CNet](cnet_logo.png)
+![CNet](cnet_logo_2.png)
 # An independently developed, object oriented neural network framework. Implemented from scratch in C++.
 
 
