@@ -16,10 +16,10 @@ int main()
 	// Load the training and evaluation data from the tsv file. 
 	// The 'circles' and 'moons' datasets both have input / output dimensions of 2.
 	//------------------------------------------------------------------------------------------------------------------------
-	vector< vector<float> > training_inputs = load_data_from_tsv_file("circles_training_inputs.txt");
-	vector< vector<float> > training_labels = load_data_from_tsv_file("circles_training_labels.txt");
-	vector< vector<float> > evaluation_inputs = load_data_from_tsv_file("circles_evaluation_inputs.txt");
-	vector< vector<float> > evaluation_labels = load_data_from_tsv_file("circles_evaluation_labels.txt");
+	vector< vector<float> > training_inputs = load_data_from_tsv_file("../example_data/circles_training_inputs.txt");
+	vector< vector<float> > training_labels = load_data_from_tsv_file("../example_data/circles_training_labels.txt");
+	vector< vector<float> > evaluation_inputs = load_data_from_tsv_file("../example_data/circles_evaluation_inputs.txt");
+	vector< vector<float> > evaluation_labels = load_data_from_tsv_file("../example_data/circles_evaluation_labels.txt");
 
 
 	//------------------------------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ int main()
 
 	// Add a few fully connected layers, each containing a number of hidden neurons. Use a sigmoid activation.
 	the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
-	the_network.add_fully_connected_layer(4, sigmoid, sigmoid_derivative);
+	the_network.add_fully_connected_layer(16, sigmoid, sigmoid_derivative);
 	the_network.add_fully_connected_layer(8, sigmoid, sigmoid_derivative);
 
 	// Add the output layer. Use a sigmoid activation.
