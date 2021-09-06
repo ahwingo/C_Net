@@ -122,7 +122,6 @@ the_network.train_network_for_epochs_with_data(num_epochs, training_inputs, trai
     |  RECALL:  0.923077
     |  F1:  0.93913
     --------------------------------------------------------
-
-# C_NET
-C_Net was developed by Houston Wingo at the University of Alabama.
+___
+_C_Net was developed by Houston Wingo at the University of Alabama._
 
