@@ -2,7 +2,7 @@
 # An independently developed, object-oriented neural network toolkit. Implemented from scratch in C++.
 
 
-## Framework Overview:
+## Toolkit Overview:
 __C_Net is an object oriented machine learning toolkit designed for programmers who want to build neural networks using C++.__ As a work in progress, C_Net currently enables users to build both simple and deep neural networks, in addition to CNNs (with 2D conv filters) and RNNs (with LSTM recurrent layers). 
 
 C_Net allows users to build a neural network at two levels of abstraction: either as a computational graph of individual neurons, or as a sequence of connected of layers. The sequential model, similar to the one implemented by KERAS, allows users to __build and train networks with just a few lines of code.__
